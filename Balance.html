@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>   
+    <body>
+        <p id="balanced"></p>
+    </body>
+    <script>
+
+        const balancedPar = function(paremeters){
+            const stack =[];
+            for (let single of paremeters){
+                console.log(single);
+                if (single=='(' ) {
+                    stack.push(single);
+                }
+                if (single==')' ){
+                    stack.pop();
+                }                
+            }
+            if(stack.length===0){
+                return true;
+            }
+            else{            
+                return false;
+            }
+        }
+        
+        if(balancedPar(')')){
+            document.getElementById("balanced").innerHTML="It is balanced";
+        }
+        else{
+            document.getElementById("balanced").innerHTML="It is NOT balanced";
+        }
+
+        
+    </script>
+</html>
+
+

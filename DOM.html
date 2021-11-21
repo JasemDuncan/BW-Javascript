@@ -1,0 +1,132 @@
+<!-- Change a element -->
+<!DOCTYPE html>
+<html>
+<body>
+    <p>P1</p>
+    <p>P2</p>
+    <p>P3</p>
+    <p id="demo"></p>
+    <span>
+        
+    </span>
+    <script>
+        document.getElementById("demo").innerHTML=Date();
+        const element = document.getElementsByTagName("p");
+        document.getElementById("demo").innerHTML = 'Prueba arreglo element[]' + element[2].innerHTML;
+    </script>
+
+<!-- --- -->
+    <h2>JavaScript HTML DOM</h2>
+    <p>Finding HTML Elements Using <b>document.forms</b>.</p>
+
+    <form id="frm1" action="/action_page.php">
+        First name: <input type="text" name="fname" value="Donald"><br>
+        Last name: <input type="text" name="lname" value="Duck"><br><br>
+        <input type="submit" value="Submit">
+    </form> 
+
+    <p>These are the values of each element in the form:</p>
+
+    <p id="demo"></p>
+    <p id="test-text"></p>
+
+    <script>
+    const x = document.forms["frm1"];
+
+    let text = "";
+
+    for (let i = 0; i < x.length ;i++) {
+    text += x.elements[i].value + "<br>";
+    }
+
+    document.getElementById("demo").innerHTML = text;
+    </script>
+
+<!-- --- -->
+    <h1 id="id01">Old Heading</h1>
+
+    <script>
+    const element1 = document.getElementById("id01");
+    element1.innerHTML = "New Heading";
+    </script>
+    <p>JavaScript changed "Old Heading" to "New Heading".</p>
+
+<!-- -- -->
+    <h2>JavaScript HTML DOM</h2>
+    <img id="image" src="smiley.gif" width="160" height="120">
+
+    <script>
+    document.getElementById("image").src = "landscape.jpg";
+    </script>
+
+    <p>The original image was smiley.gif, but the script changed it to landscape.jpg</p>
+<!-- -- -->
+    <p id="demo"></p>
+
+    <script>
+    document.getElementById("demo").innerHTML = "Date : " + Date();
+    </script>
+<!--  -->
+    <p>Bla, bla, bla</p>
+
+    <script>
+    document.write(Date());
+    </script>
+
+    <p>Bla, bla, bla</p>
+    <!--  -->
+    <h2>JavaScript Validation</h2>
+
+    <form name="myForm1" action="/action_page.php" onsubmit="return validateForm()" method="post">
+    <input type="text" name="fname1">
+    <input type="submit" value="Submit">
+    </form>
+
+    <script>
+    function validateForm() {
+        let x = document.forms["myForm1"]["fname1"].value;
+        if (x == "") {
+            alert("Name must be filled out");
+            return false;
+        }
+    }
+    </script>
+<!--  -->
+    <h2>JavaScript Validation</h2>
+
+    <p>Please input a number between 1 and 10:</p>
+
+    <input id="numb">
+
+    <button type="button" onclick="myFunction()">Submit</button>
+
+    <p id="demo"></p>
+
+    <script>
+    function myFunction() {
+    // Get the value of the input field with id="numb"
+    let x = document.getElementById("numb").value;
+    // If x is Not a Number or less than one or greater than 10
+    let text;
+    if (isNaN(x) || x < 1 || x > 10) {
+        text = "Input not valid";
+    } else {
+        text = "Input OK";
+    }
+    document.getElementById("demo").innerHTML = text;
+    }
+    </script>
+    <!--  -->
+    <h2>JavaScript Validation</h2>
+
+    <form action="/action_page.php" method="post">
+    <input type="text" name="fname" required>
+    <input type="submit" value="Submit">
+    </form>
+
+    <p>If you click submit, without filling out the text field,
+    your browser will display an error message.</p>
+    <!--  -->
+
+</body>
+</html> 
